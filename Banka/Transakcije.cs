@@ -13,13 +13,12 @@ namespace Banka
         private string id;
         private DateTime datumTransakcije;
         private double iznos;
-        private Racun izRacuna;
-        private Racun naRacun;
+        private Korisnik korisnik;
+        private Racun racun; 
 
         public string Id
         {
             get { return id; }
-            set { id = value; }
         }
 
         public DateTime DatumTransakcije
@@ -34,17 +33,18 @@ namespace Banka
             set { iznos = value; }
         }
 
-        public Racun IzRacuna
+        public Korisnik Korisnik
         {
-            get { return izRacuna; }
-            set { izRacuna = value; }
+            get { return korisnik; }
+            set { korisnik = value; }
         }
 
-        public Racun NaRacun
+        public Racun Racun
         {
-            get { return naRacun; }
-            set { naRacun = value; }
+            get { return racun; }
+            set { racun = value; }
         }
+
 
         public int CompareTo(object obj)
         {
@@ -56,6 +56,6 @@ namespace Banka
 
         public override string ToString()
 
-            => DatumTransakcije + "," + Iznos + "->" + Id.ToString();
+            => DatumTransakcije.ToString() + "," + Iznos.ToString() + "->" + Id.ToString();
     }
 }

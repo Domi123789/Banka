@@ -11,7 +11,6 @@ namespace Banka
 
         private string id;
         private double stanjeRacuna;
-        private Korisnik vlasnikRacuna;
         private double maksimalnoOgranicenje;
         private DateTime datumOtvaranja;
 
@@ -27,11 +26,6 @@ namespace Banka
             set { stanjeRacuna = value; }
         }
 
-        public Korisnik VlasnikRacuna
-        {
-            get { return vlasnikRacuna; }
-            set { vlasnikRacuna = value; }
-        }
 
         public double MaksimalnoOgranicenje
         {
@@ -48,13 +42,13 @@ namespace Banka
         public int CompareTo(object obj)
         {
             int rez = this.id.CompareTo(((Racun)obj).id);
-            if (rez == 0) rez = this.vlasnikRacuna.CompareTo(((Racun)obj).vlasnikRacuna);
+            if (rez == 0) rez = this.datumOtvaranja.CompareTo(((Racun)obj).datumOtvaranja);
             if (rez == 0) rez = this.stanjeRacuna.CompareTo(((Racun)obj).stanjeRacuna);
             return rez;
         }
 
         public override string ToString()
 
-            => VlasnikRacuna + "," + StanjeRacuna + "->" + Id.ToString();
+            => datumOtvaranja.ToString() + StanjeRacuna.ToString() + "->" + Id.ToString();
     }
 }

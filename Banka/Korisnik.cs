@@ -13,6 +13,7 @@ namespace Banka
         private string ime;
         private string prezime;
         private int brMob;
+        private Racun racun;
         private DateTime godRodj;
 
         public string Id
@@ -43,6 +44,12 @@ namespace Banka
         {
             get { return godRodj; }
             set { godRodj = value; }
+        }
+
+        public Racun Racun
+        {
+            get { return racun; }
+            set { racun = value; }
         }
 
         public int CompareTo(object obj)
